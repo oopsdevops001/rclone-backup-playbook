@@ -11,14 +11,13 @@
       remote_src: true
       src: /tmp/rclone.zip
       dest: /tmp
-    - name: find rclone bin path
-      find:
-        paths: /tmp
-        patterns: 'rclone-*'
-        file_type: directory
-      register: rclone_bin_paths
-
-    - name: backup 
-      shell: 'echo $PATH'
-      environment:
-        PATH: {{ rclone_bin_paths[0].path }}
+  - name: find rclone bin path
+    find:
+      paths: /tmp
+      patterns: 'rclone-*'
+      file_type: directory
+    register: rclone_bin_paths
+  - name: backup 
+    shell: 'echo $PATH'
+    environment:
+      PATH: {{ rclone_bin_paths[0].path }}
