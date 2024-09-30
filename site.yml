@@ -9,4 +9,4 @@
     unarchive:
       remote_src: true
       src: /tmp/rclone.zip
-      dest: /tmp/rclone
+      dest: /tmp
