@@ -1,0 +1,4 @@
+- hosts: all
+  tasks:
+  - name: download rclone
+    get_url: url:"{{ rclone_release_zip_url }}" dest:/tmp/rclone.zip
