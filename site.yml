@@ -20,4 +20,4 @@
   - name: backup 
     shell: 'echo $PATH'
     environment:
-      PATH: {{ rclone_bin_paths.files[0].path }}
+      PATH: "{{ rclone_bin_paths.files[0].path }}"
