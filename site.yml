@@ -3,5 +3,5 @@
   tasks:
   - name: download rclone
     get_url: 
-      url: "{{ rclone_release_zip_url }}" 
+      url: "{{ rclone_release_zip_url | default('https://github.com/rclone/rclone/releases/download/v1.68.1/rclone-v1.68.1-linux-amd64.zip') }}"
       dest: /tmp/rclone.zip
