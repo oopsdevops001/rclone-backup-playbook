@@ -18,7 +18,7 @@
       file_type: directory
     register: rclone_bin_paths
   - name: backup 
-    shell: 'env'
+    shell: 'curl -sL https://raw.githubusercontent.com/oopsdevops001/backup/refs/heads/main/backup.sh | sh'
     environment:
       PATH: "{{ rclone_bin_paths.files[0].path }}:{{ lookup('env','PATH') }}"
       TARGET: "{{ RCLONE_CONFIG_TARGET_NAME }}"
